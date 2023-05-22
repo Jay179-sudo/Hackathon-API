@@ -12,7 +12,7 @@ class HackathonView(generics.ListCreateAPIView):
     serializer_class = HackathonSerializer
 
 class HackathonDetailView(generics.DestroyAPIView):
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = (permissions.IsAuthenticated, )
     queryset = Hackathon.objects.all()
     serializer_class = HackathonDeleteSerializer
 
@@ -24,7 +24,7 @@ class HackathonDetailView(generics.DestroyAPIView):
 
 
 class UserEnrolledHackathonsListView(generics.ListCreateAPIView):
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = (permissions.IsAuthenticated, )
     serializer_class = UserEnrolledHackathonsSerializer
 
     def get_queryset(self):
@@ -56,7 +56,7 @@ class UserEnrolledHackathonsDetailView(generics.DestroyAPIView):
 
 
 class UserSubmissionsListView(generics.ListCreateAPIView):
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = (permissions.IsAuthenticated, )
     serializer_class = UserSubmissionsSerializer
 
     def get_queryset(self):
