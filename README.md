@@ -83,6 +83,7 @@ The project can be set up in your local environment by following the steps
         ● python manage.py makemigrations
         ● python manage.py migrate
         ● python manage.py runserver
+    ● Restart the container
 
 That's it! You should be setup by now!
 
